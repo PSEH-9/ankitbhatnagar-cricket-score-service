@@ -7,13 +7,14 @@ pipeline {
         }
 		stage('build') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn clean -U deploy'
             }
         }
 		stage('deploy') {
             steps {
-                checkout scm
+                
             }
         }
+		
     }
 }
