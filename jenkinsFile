@@ -1,0 +1,19 @@
+pipeline {
+    stages {
+        stage('clone') {
+            steps {
+                checkout scm
+            }
+        }
+		stage('build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+		stage('deploy') {
+            steps {
+                checkout scm
+            }
+        }
+    }
+}
